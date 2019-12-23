@@ -1,4 +1,4 @@
-package Academy;
+package resources;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,10 +16,11 @@ public class base {
 	public WebDriver initializeDriver() throws IOException {
 		
 		Properties prop= new Properties();
-		FileInputStream fis=new FileInputStream("C:\\Users\\nsavali\\git\\E2E_Framework_Design\\E2EFramework\\src\\main\\java\\Academy\\data.properties");
+		FileInputStream fis=new FileInputStream("C:\\Users\\nares\\git\\FrameworkDesign\\src\\main\\java\\resources\\data.properties");
 		
 		prop.load(fis);
 		String browserName=prop.getProperty("browser");
+		System.out.println(browserName);
 		
 		if(browserName.equals("chrome")) {
 			driver=new ChromeDriver();
