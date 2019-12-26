@@ -11,9 +11,11 @@ public class homePage extends base{
 	public void basePageNavigation() throws IOException {
 		
 		driver =initializeDriver();
-		driver.get("http://www.qaclickacademy.com");
+		driver.get("https://qaclickacademy.com");
 		
+		//Comment added
 		
+		System.out.println(".println(\"This is the check to see if updated\");");
 	}
 	
 }
