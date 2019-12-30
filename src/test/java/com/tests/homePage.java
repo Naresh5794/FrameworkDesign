@@ -16,12 +16,14 @@ public class homePage extends base{
 	@BeforeTest
 	public void Initializedriver() throws IOException {
 		driver =initializeDriver();
-		driver.get(prop.getProperty("url"));
+		
 	}
 	
 	@Test(dataProvider="getData")
 	
 	public void basePageNavigation(String Username,String Password, String text){
+		
+		driver.get(prop.getProperty("url"));
 		
 		LandingPageObjects Landing=new LandingPageObjects(driver);
 		Landing.getLogin().click();
