@@ -1,4 +1,4 @@
-package resources;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ public class LoginPageObjects {
 	public WebElement getPassword() {
 		return driver.findElement(password);
 	}
-	public WebElement LoginButton() {
+	public WebElement getLogin() {
 		return driver.findElement(signInButton);
 	}
 }
