@@ -3,6 +3,8 @@ package Academy;
 import java.io.IOException;
 import org.testng.annotations.Test;
 
+import resources.LandingPageObjects;
+import resources.LoginPageObjects;
 import resources.base;
 
 public class homePage extends base{
@@ -11,11 +13,15 @@ public class homePage extends base{
 	public void basePageNavigation() throws IOException {
 		
 		driver =initializeDriver();
-		driver.get("https://qaclickacademy.com");
+		driver.get("http://www.qaclickacademy.com");
 		
-		//Comment added
+		LandingPageObjects Landing=new LandingPageObjects(driver);
+		Landing.LandingPage().click();
 		
-		System.out.println(".println(\"This is the check to see if updated\");");
+		LoginPageObjects Login=new LoginPageObjects(driver);
+		Login.getEmail().sendKeys("nareshsavali@gmail.com");
+		Login.getPassword().sendKeys("1234567");
+		Login.LoginButton().click();
 	}
 	
 }

@@ -16,7 +16,7 @@ public class base {
 	public WebDriver initializeDriver() throws IOException {
 		
 		Properties prop= new Properties();
-		FileInputStream fis=new FileInputStream("C:\\Users\\nsavali\\git\\E2E_Framework_Design\\E2EFramework\\src\\main\\java\\Academy\\data.properties");
+		FileInputStream fis=new FileInputStream("C:\\Users\\nsavali\\git\\repository\\FrameworkDesign\\src\\main\\java\\resources\\data.properties");
 		
 		prop.load(fis);
 		String browserName=prop.getProperty("browser");
@@ -34,7 +34,8 @@ public class base {
 			System.out.println("Wrong Browser Name");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		return driver;
 		
 	}
